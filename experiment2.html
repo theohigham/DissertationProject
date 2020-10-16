@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Game For Studying Language Evolution</title>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">	 
+	<link rel="icon" type="image/png" href="images/icon/block.png">
+	
+	<script src="js/block_script.js"></script>	
+	<script src="js/block_action.js"></script>	
+	
+	<script src="js/translate.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/variables.js"></script>
+  </head>
+  <body> 	
+	<span id="debug"></span>
+	<script>
+		if(debugMode) document.getElementById("debug").innerHTML = 'Debug mode. <button onclick="resetVariables();">resetVariables</button> <button onclick="skipLevelPart2();">Skip level</button> <button onclick="skipAllLevelPart2();">Skip all levels</button>';		
+	</script>
+	<center>
+		<div id="wrapper" align="left">			
+			<div id="third">
+				<button id="help" onclick="showInstructionPopUp('block');" title="Help">?</button>				
+				<button id="about" onclick="showAboutPopUp('block');" title="About">i</button> 
+				<strong>Part 2</strong><br/>
+				<span >Blocks:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Task</span >
+					
+				<div id="blocks" style="width:100%; height:100%;" >				
+					<canvas id="blocksCanvas" width="800" height="400"></canvas>							
+				</div>
+				<div class="instructions2">	
+					Instruction: <div id="newInstruction" style="display: inline-block;padding-left:15px;width:600px;border-radius: 25px;border: 1px solid #8c8c8c;"></div>
+					<button id="submit" style="display:inline;" onclick="submitAnswer2();">Submit</button> 
+					<br/><center><div id="keyboard"></div></center>		
+					<span >Question mark '?' button for help.</span >
+				</div>			
+			</div>		
+			
+			<div class="instructions" id="instructions" style="padding:15px;">
+				<div id='close' style="cursor:pointer;" onclick="showInstructionPopUp('none');">x</div>		
+				<h3>Part 2 Instructions:</h3>
+				<br/>
+				Now that you've learned about the blockworld language, it's time to create instructions for someone else to follow! Just like in part 1, there is a workspace and a starting pattern, but now you get to see the goal pattern, and need to come up with instructions in the blockworld language to help someone create it. Below is a schematic the the task screen, and the steps in each task. If you don't remember the language exactly, don't worry -- just do the best you can.
+				<center><img src="images/instruction2.gif" style="cursor:not-allowed;" width="37%" height="37%" ></center>
+				<ol>
+					<li>Check out which blocks you have in the block section.</li>
+					<li>Check out how is the task before and after solved.</li>
+					<li>Write an instruction with everything you learned before using these keys.</li>
+					<li>Press submit when you are done (Be careful and make the instruction understable and with logic using the vocabulary from the tasks you solved).</li>
+				</ol> 					
+				<!--p>You have a number of attempts on each task shown in <span class="numberCircle">&nbsp;4&nbsp;</span-->					
+				<h3>Buttons</h3>
+				<strong>Delete</strong>: Press the button to delete the last token.<br/>
+				<strong>Submit</strong>: Press the button when you have the desired block pattern to evaluate if its correct.
+				<center><button onclick="showInstructionPopUp('none');">Close</button>
+				
+			</div>
+			
+			<div class="instructions" id="about1" align="left" >
+				<div id='close' style="cursor:pointer;" onclick="showAboutPopUp('none');">x</div>		
+				<h3>About the game:</h3>			
+				<div style="position: absolute;top:30px;padding:15px;" >
+					<img src="images/blocks.png" style="cursor:not-allowed;float:left; display:inline;padding:30px;" width="10%" height="10%" >
+				
+				  
+				  You have entered blockworld, inhabited by people whose only interest is in arranging colored blocks into patterns.
+
+				  <p>Your goal is to learn the blockworld language, use it to arrange blocks, and create new instructions in the language. It’s a difficult challenge, but we think you’re up to it!
+
+				  <h3>Part 1</h3>
+				  <p>Your goal is to learn the blockworld language, and to follow instructions in the language to arrange blocks.							
+				  <p>You will see several tasks. Each task includes instructions in the blocksworld language, a starting pattern of blocks that you need to modify, and a workspace that you can take blocks from or put them into. You will have a few chances to find the right pattern. If you run out of chances, you'll be shown the correct pattern and move to the next task.
+
+				  <h3>Part 2</h3>
+				  <p>You will use what you have learned to create instructions for another person. You will see their starting pattern, the pattern they must create, and the blocks in their workspace.
+				  You will have a special keyboard to write instructions in the blocksworld langauge, using the syllables the language is built out of.
+				  <p>Another person might have to use your instructions, so choose them carefully!</p>
+
+				  <p>There are several words to learn and it might be difficult to remember everything. Just do your best and know that it's ok to make mistakes. 
+				  
+					<p><span style="color:red;font-size:16px;">Note: </span>Please don't use the back button to try to go back to an earlier task. Just do the best you can on each task.
+					<center><button onclick="showAboutPopUp('none');">Next</button></center>
+				</div>
+			</div>
+		</div>		
+	</center>
+		
+	<script>
+		getVariables();
+		loadAllCanvas2();
+		createKeyboard();
+	</script>
+  </body>
+</html>
+<!--
+Copyright (c) 2017 by Ash Kyd (http://codepen.io/AshKyd/pen/JYXEpL)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->

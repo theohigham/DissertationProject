@@ -1,0 +1,153 @@
+body {
+  font-family: 'Droid Sans', sans-serif;  
+  background-image: url("mosaicgs.png");
+}
+p {
+	text-align:justify;
+}
+
+span {
+	font-size:12px;	
+}
+
+div {
+    display: block;
+}
+
+button {
+	cursor:pointer;	
+}
+
+#debug{
+	color:red;
+	font-weight: bold;
+}
+
+#ethicForm{
+	border:1px solid #8c8c8c; 
+	width:70%; 
+	height:45vh; 
+	padding-left:10px;
+	padding-right:10px; 
+	margin:10px;
+	overflow-y: auto;
+	background-color:white;
+}
+#submitEthic{
+	background-color:white;
+	border-radius: 15px;
+	width:400px;
+	padding:2px 0px;
+	border:1px solid #8c8c8c;
+}
+
+#wrapper {
+    width: 1000px;
+    height:520px;
+
+	margin-left:0px;
+	margin-top:20px;
+	 
+	border-radius: 15px;
+		
+    padding:2px 0px;
+    background:#e6e6e6;
+	
+	border: 1px solid #bfbfbf;
+}
+#wrapper:hover {
+    box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+
+}
+#first {
+    float:left;
+    width: 200px;
+    height: 70px;
+}
+
+#second {
+    float:left;
+    width: 600px;
+    height: 70px;
+}
+
+#third {	
+	padding-left:5px;
+    float:left;
+    width: 1000px;
+    height: 400px;
+}
+
+#fourth {
+	border: 1px solid #bfbfbf;
+	background-color:#ffffff;
+	background-color:white;
+	padding-left:5px;
+	border-radius: 15px;
+	padding:10px;	
+}
+#fourth:hover {
+    box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+
+}
+.chart{
+	
+}
+.instructions{
+	background-color:#e6e6e6;
+	position: absolute; 
+	border: 1px solid #ccc;
+	width:1020px;
+	height:550px;
+	padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;	
+	display:none;
+}
+.instructions2{
+	background-color:white;
+	position: absolute; 
+	top:410px; 
+	border: 1px solid #8c8c8c;
+	width:977px;
+	height:120px;
+	padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;	
+}
+.instructions h3 {
+    padding: 0;
+    margin: 0;
+    color: #002966;//369;
+}
+.instructions:hover {
+    box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+
+}
+#close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+}
+.red {
+    color:red;
+	font-size:16px;
+}
+.numberCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 16px;
+    height: 16px;
+    padding: 1px;
+
+    background: #ffffff;
+    border: 1px solid red;
+    color: red;
+    text-align: center;
+
+    font: 14px Arial, sans-serif;
+}

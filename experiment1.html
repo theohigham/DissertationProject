@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Game For Studying Language Evolution</title>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">	 	
+	<link rel="icon" type="image/png" href="images/icon/block.png">
+	
+	<script src="js/block_script.js"></script>		
+	<script src="js/block_action.js"></script>	
+	
+	<script src="js/translate.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/variables.js"></script>
+  </head>
+  <body> 
+	<span id="debug"></span>
+	<script>
+		if(debugMode) document.getElementById("debug").innerHTML = 'Debug mode. <button onclick="resetVariables();">resetVariables</button> <button onclick="skipLevelPart1();">Skip level</button> <button onclick="skipAllLevelPart1();">Skip all levels</button>';		
+	</script>
+	<center>		
+		<div id="wrapper" align="left">
+			<div id="first">	
+					&nbsp;
+					<button id="help" onclick="showInstructionPopUp('block');" title="Help">?</button>								
+					<button id="about" onclick="showAboutPopUp('block');" title="About">i</button>	
+					<strong>Part 1</strong>					
+			</div>
+			<div id="second">
+				<div style="width:100%; height:100%;">
+					<span >Instruction:</span>
+					<h3 id="instruction">
+						Instruction
+					</h3>
+				</div>
+			</div>
+			<div id="third">				
+				<span >Blocks:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Task:</span >
+				<div id="blocks" style="width:100%; height:100%;" >				
+					<canvas id="blocksCanvas" width="1000" height="400"></canvas>					
+					<button id="reset" style="position: absolute; top:150px; left:50%" onclick="loadAllCanvas();">Restart level</button>
+					<button id="submit" style="position: absolute; top:430px; left:50%;" onclick="submitAnswer();">Submit</button>
+					<button id="next" style="position: absolute; top:450px; left:50%;" onclick="nextLevel();">Next</button>				
+				</div>
+				<span >Question mark '?' button for help.</span >
+			</div>	
+
+
+			<div class="instructions" id="instructions" align="left" >
+				<div id='close' style="cursor:pointer;" onclick="showInstructionPopUp('none');">x</div>		
+				<h3>Part 1 Instructions:</h3>
+				<br/>						
+				<img src="images/instruction.gif" style="cursor:not-allowed;float:left; display:inline;padding:25px;">
+				
+				<br/>	
+				At the top of the screen, you will see instructions in the blockworld language. On the right side of the screen, there will be a starting pattern of blocks that you need to modify according to those instructions. On the left side of the screen is your workspace. Below is a schematic the the task screen, and the steps in each task:
+				<div style="padding:15px;position: absolute;top:125px;left:245px;">
+					<ol>
+						<li>Read the instructions at the top of the screen. In this example, they are <strong>"wiku kota wobo"</strong>.</li>
+						<li><strong>Click and drag</strong> the blocks to arrange the pattern according to the instructions. 
+						The yellow floor marks the spot where you can place the block. Additionally, you can remove any block from the task.</li>
+						<li>Press <strong>submit</strong> button. If the task is correct press <strong>next</strong>. If the task is incorrect try again!</li>
+						<li>You have a number of attempts on each task shown in the left corner.</li>
+						<li><strong>You can add blocks, remove blocks, and place blocks over other blocks.</strong></li>
+					</ol> 													
+				</div>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<!--p>You have a number of attempts on each task shown in <span class="numberCircle">&nbsp;4&nbsp;</span-->					
+					<h3>Actions</h3>
+					<img src="images/pointer.png">Pointer for allowed buttons to use.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<img src="images/not-allowed.png">Area not allowed for interaction.<br/>
+					<img src="images/grab.png">Area possible to grab.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<img src="images/grabbing.png">Grabbing block.<br/><br/>
+					<h3>Buttons</h3>
+					<strong>Submit</strong>: Press the button when you have the desired block pattern to evaluate if its correct.<br/>
+					<strong>Restart level</strong>: Return the blocks to their initial place.<br/>		
+					<strong>Next</strong>: If the pattern is correct or you have no more attempts, press Next to move to the next task.<br/><br/>
+					<center><button onclick="showInstructionPopUp('none');">Close</button></center>
+			</div>
+			
+			<div class="instructions" id="about1" align="left" >
+				<div id='close' style="cursor:pointer;" onclick="showAboutPopUp('none');">x</div>		
+				<h3>About the game:</h3>			
+				<div style="position: absolute;top:30px;padding:15px;" >
+					<img src="images/blocks.png" style="cursor:not-allowed;float:left; display:inline;padding:30px;" width="10%" height="10%" >
+				
+				  
+				  You have entered blockworld, inhabited by people whose only interest is in arranging colored blocks into patterns.
+
+				  <p>Your goal is to learn the blockworld language, use it to arrange blocks, and create new instructions in the language. It’s a difficult challenge, but we think you’re up to it!
+
+				  <h3>Part 1</h3>
+				  <p>Your goal is to learn the blockworld language, and to follow instructions in the language to arrange blocks.							
+				  <p>You will see several tasks. Each task includes instructions in the blocksworld language, a starting pattern of blocks that you need to modify, and a workspace that you can take blocks from or put them into. You will have a few chances to find the right pattern. If you run out of chances, you'll be shown the correct pattern and move to the next task.
+
+				  <h3>Part 2</h3>
+				  <p>You will use what you have learned to create instructions for another person. You will see their starting pattern, the pattern they must create, and the blocks in their workspace.
+				  You will have a special keyboard to write instructions in the blocksworld langauge, using the syllables the language is built out of.
+				  <p>Another person might have to use your instructions, so choose them carefully!</p>
+
+				  <p>There are several words to learn and it might be difficult to remember everything. Just do your best and know that it's ok to make mistakes. 
+				  
+					<p><span style="color:red;font-size:16px;">Note: </span>Please don't use the back button to try to go back to an earlier task. Just do the best you can on each task.
+					<center><button onclick="showAboutPopUp('none');">Next</button></center>
+				</div>
+			</div>
+			
+		</div>				
+	</center>
+			
+	<script src="js/block_events.js"></script>	
+	<script>
+		getVariables();
+		loadAllCanvas();
+	</script>
+  </body>
+</html>
+<!--
+Copyright (c) 2017 by Ash Kyd (http://codepen.io/AshKyd/pen/JYXEpL)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
