@@ -3,8 +3,8 @@
 	"conf":[	
 		{"i":"0","blocks":"1","before":"0","after":["1"],"instruction":"add blue"},
 		{"i":"1","blocks":"2","before":"00","after":["02","20"],"instruction":"add orange"},
-		{"i":"2","blocks":"12","before":"000","after":["012","021","102","120","201","210"],"instruction":"add orange blue"},
-		{"i":"3","blocks":"1122","before":"000","after":["221","212","122"],"instruction":"add orange orange blue"},
+		{"i":"2","blocks":"12","before":"000","after":["012", "10_20","10_02","102","120","201", "02_10","210"],"instruction":"add orange blue"},
+		{"i":"3","blocks":"1122","before":"000","after":["22_21", "10_20","20_12","10_22"],"instruction":"add orange orange blue"},
 		
 		{"i":"4","blocks":"","before":"2","after":["0"],"instruction":"remove orange"},
 		{"i":"5","blocks":"2","before":"12","after":["02","20"],"instruction":"remove blue"},
@@ -13,8 +13,8 @@
 		{"i":"8","blocks":"12","before":"100","after":["200","020","002"],"instruction":"remove blue add orange"},
 		
 		{"i":"9","blocks":"111","before":"000","after":["111"],"instruction":"add all blue"},
-		{"i":"10","blocks":"22","before":"000","after":["022","202","220"],"instruction":"add all orange"},
-		{"i":"11","blocks":"1122","before":"0000","after":["1122","1212","1221","2211","2121","2112"],"instruction":"add all blue orange"},
+		{"i":"10","blocks":"22","before":"000","after":["022", "22_00","202","220", "00_22"],"instruction":"add all orange"},
+		{"i":"11","blocks":"1122","before":"0000","after":["1122", " 11_00","1212","1221","2211","2121","2112"],"instruction":"add all blue orange"},
 		{"i":"12","blocks":"1122","before":"0000","after":["1220","1202","1022","2012","2021","2102","2120","2201","2210","0122","0212","0221"],"instruction":"add blue add all orange"},
 		{"i":"13","blocks":"1122","before":"120","after":["111"],"instruction":"remove orange add all blue"},
 		
