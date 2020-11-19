@@ -34,7 +34,7 @@ var tasks = [{
 }]
 
 //First position is used to denote an space with " " or a word "a" or nothing "". (No spaces at the beginig or end of sentences).
-var tokens=" ,wa,wi,wu,we,wo,ka,ku,ke,ko,ta,ti,te,to,tu,ba,bi,bu,bo,na,ni";
+var tokens=" wa,wi,wu,we,wo,wa,wi,wu,we,wo,wa,wi,wu,we,wo,wa,wi,wu,we,wo";
 
 //All posible words to use for the game, consider always space.
 var words=[
