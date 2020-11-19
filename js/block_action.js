@@ -688,7 +688,8 @@
 				error = true;
 				console.log("tokens")
 			}else {
-				tokens = text.split(",");			
+				tokens = text.split(",");
+				tokens = _.sample(tokens,5)
 			}
 		});
 		getFileFromServer(url+wordsFile, function(text) {
