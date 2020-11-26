@@ -23,11 +23,29 @@ function randomTokensForWords(){
 			new_tokens += posible_tokens[index];
 			posible_tokens.splice(index, 1);			
 		}	
-
-		//If words[i] equals any word from englishWords:
-		// { i--; } 
+		
+		var englishWord = false;
+		
+		for ( var i=0; i < englishWords.length; i++) {
+		
+		if ( new_tokens == englishWords[i] ){
+		
+		englishWord = true;	
+			
+		}
+		}	
+			
+		
+		if ( englishWord = false ){
+		
 		words[i].token = new_tokens;
-	}	
+			
+		} else {
+		
+		randomTokensForWords();	
+			
+		}
+		
 }
 
 function loadTranslations(){		
