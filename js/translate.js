@@ -4,6 +4,8 @@ function randomIntFromInterval(min,max){
 
 function randomTokensForWords(){
 	var posible_tokens=[];
+	var englishWords = ["to","wake","woke","kana","take","toke","tote","tutu","tuba","tuna","bake","bate","bani","bike","bite","bubo","banana","bonito","katakana"];
+	    
 	if(tokens.indexOf(",")!= -1){
 		tokens = tokens.split(",");
 	}
@@ -22,6 +24,8 @@ function randomTokensForWords(){
 			posible_tokens.splice(index, 1);			
 		}	
 
+		//If words[i] equals any word from englishWords:
+		// { i--; } 
 		words[i].token = new_tokens;
 	}	
 }
