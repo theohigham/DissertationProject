@@ -36,15 +36,15 @@ function randomTokensForWords(){
 		#}	
 			
 		
-		if ( englishWord = false ){
+		#if ( englishWord = false ){
 		
 		words[i].token = new_tokens;
 			
-		} else {
+		#} else {
 		
-		randomTokensForWords();	
+		#randomTokensForWords();	
 			
-		}
+		#}
 		
 }
 
