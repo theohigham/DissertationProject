@@ -26,14 +26,14 @@ function randomTokensForWords(){
 		
 		var englishWord = false;
 		
-		for ( var i=0; i < englishWords.length; i++) {
+		#for ( var i=0; i < englishWords.length; i++) {
 		
-		if ( new_tokens == englishWords[i] ){
+		#if ( new_tokens == englishWords[i] ){
 		
-		englishWord = true;	
+		#englishWord = true;	
 			
-		}
-		}	
+		#}
+		#}	
 			
 		
 		if ( englishWord = false ){
