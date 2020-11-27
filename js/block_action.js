@@ -504,7 +504,8 @@
 		for(var i=1;i<words.length;i++){
 			survey.push(words[i].word+"("+getTranslation(words[i].word)+"):"+removeSpecialCharacters(document.getElementById("word"+i).value));
 		}
-						
+		
+		// Modify this to suit the web server
 		var game_json = {};
 		game_json.chainId=tasks[0].id;
 		game_json.idVersion=version;		
