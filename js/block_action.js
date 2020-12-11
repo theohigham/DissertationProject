@@ -521,7 +521,17 @@
   
 		//alert(JSON.stringify(game_json))						
 		if(saveInServer){	
-			chunker.sendChunk(game_json);			
+			chunker.sendChunk(game_json);	
+		/*try{ 
+		
+		shrdlevo.experimentId="shrdlevo";
+		shrdlevo.sessionId="Math.Random(9)";
+		
+		sendChunk(shrdlevo.json);
+		
+		}	
+		*/	
+			
 		}
 		if(downloadJSON){
 			download("shrdlevo.json",JSON.stringify(game_json));
