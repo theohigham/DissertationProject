@@ -20,3 +20,5 @@ var wordsFile = "json/words.json";
 //use https url for LOCAL testing
 var urlLocal = "https://e-hto.github.io/shrdlevo/"; 
 var urlData = "https://somata.inf.ed.ac.uk/shrdlevo/getData";
+
+var experimentVersion = 1.0
