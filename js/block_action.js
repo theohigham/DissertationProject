@@ -1,16 +1,16 @@
-	function setCharAt(str,index,chr) {
+	function setCharAt(str,index,chr) {   // Replaces the character in the string at index 
 		if(index > str.length-1) return str;
 		return str.substr(0,index) + chr + str.substr(index+1);
 	}
 
-	function writeMessage(canvas, message) {
+	function writeMessage(canvas, message) { // Fills in a rectangle with text
         var context = canvas.getContext('2d');
         context.clearRect(5, canvas.height-25, 125, 25);
         context.font = '14pt Calibri';
         context.fillStyle = 'black';
         context.fillText(message, 5, canvas.height-10);
     }
-    function getMousePos(canvas, evt) {
+    function getMousePos(canvas, evt) { // Returns the position of mouse within the canvas
         var rect = canvas.getBoundingClientRect();
         return {
           x: Math.round(evt.clientX - rect.left),
@@ -18,9 +18,9 @@
         };
     }
 	
-	function setCursorByID(id,cursorStyle) {
+	function setCursorByID(id,cursorStyle) { // Chooses apropriate mouse cursor image
 		var elem;
-		if (document.getElementById &&
+		if (document.getElementById && // document represents the webpage
 			(elem=document.getElementById(id)) ) {
 			if (elem.style) elem.style.cursor=cursorStyle;
 		}
@@ -29,11 +29,11 @@
 	///////////////////LOAD/////////////////////////
 	///////////////////////////////////////////////
 		
-	function loadInstruction() {
+	function loadInstruction() {  // Shows instruction for the current task
 		//console.log("level: "+level)
 		//console.log("randomTaskNumber: "+randomTaskNumber)
 		//console.log("randomTaskNumber[level]: "+randomTaskNumber[level])
-		document.getElementById("instruction").innerHTML = tasks[0].conf[randomTaskNumber[level]].instruction;
+		document.getElementById("instruction").innerHTML = tasks[0].conf[randomTaskNumber[level]].instruction; 
 	}
 		
 		
