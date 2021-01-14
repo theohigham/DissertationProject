@@ -517,7 +517,7 @@
 		game_json.survey = survey;
 	
 		game_json.experimentId=experimentVersion;
-		game_json.sessionId="010101010";
+		game_json.sessionId=Math.floor(Math.random() * 1000000000);
   
 		//alert(JSON.stringify(game_json))						
 		if(saveInServer){	
