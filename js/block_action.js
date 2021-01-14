@@ -516,7 +516,7 @@
 		game_json.tokens = tokens.toString();
 		game_json.survey = survey;
 	
-		game_json.experimentId="shrdlevo";
+		game_json.experimentId=experimentVersion;
 		game_json.sessionId="010101010";
   
 		//alert(JSON.stringify(game_json))						
