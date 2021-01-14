@@ -53,6 +53,8 @@ function randomTokensForWords(){
 			
 		//}
 		
+	}
+		
 }
 
 function loadTranslations(){		
