@@ -700,8 +700,8 @@
 				console.log("tokens")
 			}else {
 				tokens = text.split(",");
-				var randomTokens = _.sample(tokens,5);
-				tokens = randomTokens + randomTokens + randomTokens + randomTokens;
+				//var randomTokens = _.sample(tokens,5);
+				//tokens = randomTokens + randomTokens + randomTokens + randomTokens;
 			}
 		});
 		getFileFromServer(url+wordsFile, function(text) {
