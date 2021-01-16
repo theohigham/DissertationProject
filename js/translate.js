@@ -11,22 +11,7 @@ function randomTokensForWords(){
 		tokens = tokens.split(","); // tokens is now  an array
 	}
 	
-	//choose 5 tokens at random to make up the language
 	
-	var index1 = randomIntFromInterval(1,20);
-	var index2 = randomIntFromInterval(1,20);
-	var index3 = randomIntFromInterval(1,20);
-	var index4 = randomIntFromInterval(1,20);
-	var index5 = randomIntFromInterval(1,20);
-	
-		//CHANGE THIS TO PULL FROM ONLY 5 TOKENS!!!  VVV 
-		//Instead of the for loop, randomly choose 5 numbers < tokens.length
-	
-		posible_tokens.push(index1.toString()); // Put the token's index i into posible_tokens
-		posible_tokens.push(index2.toString());
-		posible_tokens.push(index3.toString());
-		posible_tokens.push(index4.toString());
-		posible_tokens.push(index5.toString());
 	
 	//words variable comes from the file words.json
 	// words[0] is always " " (space)
